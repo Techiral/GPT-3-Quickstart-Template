@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<head>
+  <title>Flask GPT-3 App</title>
+  <link
+    rel="shortcut icon"
+    href="{{ url_for('static', filename='dog.png') }}"
+  />
+  <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" />
+</head>
+
+<body>
+  <img src="{{ url_for('static', filename='dog.png') }}" class="icon" />
+  <h3>Ask A Query</h3>
+  <form action="/" method="post">
+    <input type="text" name="animal" placeholder="Enter your query" required />
+    <input type="submit" value="Submit" />
+  </form>
+  {% if result %}
+  <div class="result">{{ result }}</div>
+  {% endif %}
+</body>
